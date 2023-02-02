@@ -1,6 +1,6 @@
 # streamlit_apps
 
-# Reproducing the streamlit app
+# Reproducing the test app
 To recreate this app on your own computer, you'll need conda and a compatible version of Python; the latest version of conda and Python 3.9.12 is recommended, as later releases are not continuously supported.  These steps can be repeated and modified for different repos + apps with variable requirements, but be sure you're using compatible versions of both conda and python to avoid errors.
 
 
