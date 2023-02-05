@@ -42,3 +42,6 @@ Download and unzip contents from https://github.com/baokiddy/streamlit_apps/arch
 ```
 streamlit run ~/your_path/rounds_analysis.py
 ```
+To get out of the app at any time, you'll use ^C to stop. You'll also want to deactivate conda, and then reactivate your conda environment again when you're ready (ours was called firstapp in this tutorial). Using these virtual environments is the safest way to be sure that your versioning and specs for streamlit purposes are not going to get mixed up with your home directory's settings--so don't forget that little step!
+
+For any bugs or requests, please open a ticket on this repo. The more specific, the better!
