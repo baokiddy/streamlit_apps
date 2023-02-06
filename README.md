@@ -37,10 +37,15 @@ pip3 install -r requirements.txt
 
 Download and unzip contents from https://github.com/baokiddy/streamlit_apps/archive/refs/heads/main.zip
 
+### Go into the directory of the test app you'd like to run. For our example, we'll use the fdd_round_analysis
+```
+cd fdd_round_analysis
+```
+
 ###  Launch the app
 
 ```
-streamlit run ~/your_path/rounds_analysis.py
+streamlit run rounds_analysis.py
 ```
 To get out of the app at any time, you'll use ^C to stop. You'll also want to deactivate conda, and then reactivate your conda environment again when you're ready (ours was called firstapp in this tutorial). Using these virtual environments is the safest way to be sure that your versioning and specs for streamlit purposes are not going to get mixed up with your home directory's settings--so don't forget that little step!
 
