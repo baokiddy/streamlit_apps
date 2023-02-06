@@ -16,12 +16,12 @@ with siteHeader:
   st.text('In this project we are going to breakdown analysis of the round contributions and identify possible sybil behaviour')
 
   col1, col2, col3, col4 = st.columns([5, 5, 20, 5])
-    with col2:
-      st.image("fantom.png", width=100)
-    with col3:
-      st.title("Rounds Dashboard Demo")
-    with col4:
-      st.image("gtc.png", width=100)
+  with col2:
+    st.image("fantom.png", width=100)
+  with col3:
+    st.title("Rounds Dashboard Demo")
+  with col4:
+    st.image("gtc.png", width=100)
     
   col1, col2, col3 = st.columns(3)
   col1.metric("Grant applications", "10")
