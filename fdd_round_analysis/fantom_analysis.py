@@ -21,9 +21,7 @@ df = get_data()
 
 st.title("demo of rounds dashboard")
 
-columns = fantom_data.columns
-
-print ("Columns", columns)
+print(fantom_data.columns)
 #projects = fantom_data["destination_wallet"].tolist()
 #donations = fantom_data["amount"].tolist()
 #n_projects = len(np.unique(projects))
