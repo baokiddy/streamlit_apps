@@ -77,4 +77,3 @@ with placeholder.container():
 
     st.markdown("### Detailed Data View")
     st.dataframe(df)
-    time.sleep(1)
