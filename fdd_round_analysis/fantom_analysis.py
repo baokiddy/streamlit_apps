@@ -25,12 +25,12 @@ columns = fantom_data.columns
 
 print ("Columns", columns)
 #projects = fantom_data["destination_wallet"].tolist()
-donations = fantom_data["amount"].tolist()
+#donations = fantom_data["amount"].tolist()
 #n_projects = len(np.unique(projects))
-avg_donation = np.mean(donations)
+#avg_donation = np.mean(donations)
     
-print("# of Projects", n_projects)
-print("Avg Donation", avg_donation)
+#print("# of Projects", n_projects)
+#print("Avg Donation", avg_donation)
 
 # top-level filters
 #project_filter = st.selectbox("Select the Project", pd.unique(df["destination_wallet"]))
