@@ -5,14 +5,6 @@ import json
 import numpy as np
 
 
-#### ATTEMPT TO CACHE: not operable
-#### URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] 
-#dataset_url = "https://raw.githubusercontent.com/baokiddy/streamlit_apps/fdd_round_analysis/data/fantom_data_analysis_by_data_subset.csv"
-#@st.experimental_memo
-#def get_data() -> pd.DataFrame:
-#    return pd.read_csv(dataset_url)
-#df = get_data()
-
 st.set_page_config(
     page_title="Fantom Round Dashboard",
     page_icon="📊",
@@ -21,7 +13,6 @@ st.set_page_config(
 
 fantom_data = pd.read_csv('data/fantom_data_analysis_by_data_subset.csv') 
 
-# read csv from a URL
 @st.experimental_memo
 def get_data() -> pd.DataFrame:
     return pd.read_csv(fantom_data)
@@ -41,12 +32,10 @@ df = df[df["destination_wallet"] == project_filter]
 
 # creating KPIs
 avg_donation = np.mean(df["amount"])
-
-    count_donors = int(
-        df[(df["source_wallet"] == "source_wallet")]["source_wallet"].count()
-    )
-
-    projects = np.sum(df["amount"])
+count_donors = int(
+    df[(df["source_wallet"] == "source_wallet")]["source_wallet"].count()
+)
+projects = np.sum(df["amount"])
 
     with placeholder.container():
 
