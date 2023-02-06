@@ -116,4 +116,7 @@ with fn_dataExploration:
   st.text('This data is ...')
 
   fantom_names_sum = fantom_names_contributions[['amount_donated', 'total_amount_donated']]
-  st.bar_chart(fantom_names_sum, x='amount_donated', y='total_amount_donated') 
+  st.bar_chart(fantom_names_sum, x='amount_donated', y='total_amount_donated')
+
+  st.markdown("### Detailed Data View")
+  st.dataframe(df)
