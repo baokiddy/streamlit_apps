@@ -9,20 +9,20 @@ dataExploration = st.container()
 newFeatures = st.container()
 modelTraining = st.container()
 
-col1, col2, col3, col4 = st.columns([5, 5, 20, 5])
-with col2:
-    st.image("fantom.png", width=200)
-with col3:
-    st.title("Rounds Dashboard Demo")
-with col4:
-    st.image("gtc.png", width=200)
-
 rc_dataExploration, ls_dataExploration, sf_dataExploration, fn_dataExploration = st.tabs(["Revoke.cash", "LoanShark", "SymphonyFinance", "FantomNames"])
 
 with siteHeader:
   st.title('Welcome to Fantom Round Analysis!')
   st.text('In this project we are going to breakdown analysis of the round contributions and identify possible sybil behaviour')
 
+  col1, col2, col3, col4 = st.columns([5, 5, 20, 5])
+    with col2:
+      st.image("fantom.png", width=100)
+    with col3:
+      st.title("Rounds Dashboard Demo")
+    with col4:
+      st.image("gtc.png", width=100)
+    
   col1, col2, col3 = st.columns(3)
   col1.metric("Grant applications", "10")
   col2.metric("Unique contributors", "900")
