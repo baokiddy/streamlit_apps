@@ -23,8 +23,8 @@ st.title("demo of rounds dashboard")
 
 projects = [str(row["destination_wallet"]) for row in fantom_data]
 donations = [float(row["amount"]) for row in fantom_data]
-n_projects = nunique(projects)
-avg_donation = mean(donations)
+n_projects = np.unique(projects)
+avg_donation = np.mean(donations)
     
 print("# of Projects", n_projects)
 print("Avg Donation", avg_donation)
