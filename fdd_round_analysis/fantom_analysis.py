@@ -3,6 +3,7 @@ import pandas as pd
 from pandas.io.json import json_normalize
 import json
 import numpy as np
+import gsheetsdb
 
 siteHeader = st.container()
 dataExploration = st.container()
