@@ -15,7 +15,7 @@ fantom_data = pd.read_csv('data/fantom_data_analysis_by_data_subset.csv')
 
 @st.experimental_memo
 def get_data() -> pd.DataFrame:
-    return pd.read_csv(fantom_data)
+    return fantom_data
 
 df = get_data()
 
