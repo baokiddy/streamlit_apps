@@ -31,7 +31,7 @@ placeholder = st.empty()
 df = df[df["destination_wallet"] == project_filter]
 
 # creating KPIs
-avg_donation = np.mean(df["amount"])
+avg_donation = int(np.round(np.mean(df["amount"])))
 count_donors = int(
     df[(df["source_wallet"] == "source_wallet")]["source_wallet"].count()
 )
@@ -58,7 +58,7 @@ with placeholder.container():
     kpi3.metric(
         label="A/C Balance ＄",
         value=f"$ {round(avg_donation,2)} ",
-        delta=-round(avg_donation / avg_donation) * 100,
+        delta=-round(avg_donation / 1) * 100,
     )
 
         # create two columns for charts
