@@ -1,3 +1,5 @@
+##this is an attempt to pull from googlesheets as data source. Not yet functional.
+
 import streamlit as st
 import pandas as pd
 from pandas.io.json import json_normalize
