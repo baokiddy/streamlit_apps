@@ -39,8 +39,8 @@ placeholder = st.empty()
 # dataframe filter
 df = df[df["destination_wallet"] == project_filter]
 
-    # creating KPIs
-    avg_donation = np.mean(df["amount"])
+# creating KPIs
+avg_donation = np.mean(df["amount"])
 
     count_donors = int(
         df[(df["source_wallet"] == "source_wallet")]["source_wallet"].count()
