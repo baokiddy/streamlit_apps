@@ -21,9 +21,12 @@ df = get_data()
 
 st.title("demo of rounds dashboard")
 
-projects = fantom_data["destination_wallet"].tolist()
+columns = fantom_data.columns
+
+print ("Columns", columns)
+#projects = fantom_data["destination_wallet"].tolist()
 donations = fantom_data["amount"].tolist()
-n_projects = len(np.unique(projects))
+#n_projects = len(np.unique(projects))
 avg_donation = np.mean(donations)
     
 print("# of Projects", n_projects)
