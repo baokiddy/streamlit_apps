@@ -28,32 +28,25 @@ def get_data() -> pd.DataFrame:
 
 df = get_data()
 
-st.title("Real-Time / Live Data Science Dashboard")
+st.title("demo of rounds dashboard")
 
 # top-level filters
-job_filter = st.selectbox("Select the Project", pd.unique(df["destination_wallet"]))
+project_filter = st.selectbox("Select the Project", pd.unique(df["destination_wallet"]))
 
 # creating a single-element container
 placeholder = st.empty()
 
 # dataframe filter
-df = df[df["job"] == job_filter]
-
-# near real-time / live feed simulation
-for seconds in range(200):
-
-    df["age_new"] = df["age"] * np.random.choice(range(1, 5))
-    df["balance_new"] = df["balance"] * np.random.choice(range(1, 5))
+df = df[df["destination_wallet"] == project_filter]
 
     # creating KPIs
-    avg_age = np.mean(df["age_new"])
+    avg_donation = np.mean(df["amount"])
 
-    count_married = int(
-        df[(df["marital"] == "married")]["marital"].count()
-        + np.random.choice(range(1, 30))
+    count_donors = int(
+        df[(df["source_wallet"] == "source_wallet")]["source_wallet"].count()
     )
 
-    balance = np.mean(df["balance_new"])
+    projects = np.sum(df["amount"])
 
     with placeholder.container():
 
@@ -63,20 +56,20 @@ for seconds in range(200):
         # fill in those three columns with respective metrics or KPIs
         kpi1.metric(
             label="Age ⏳",
-            value=round(avg_age),
-            delta=round(avg_age) - 10,
+            value=round(avg_donation),
+            delta=round(avg_donation) - 10,
         )
         
         kpi2.metric(
             label="Married Count 💍",
-            value=int(count_married),
-            delta=-10 + count_married,
+            value=int(avg_donation),
+            delta=-10 + avg_donation,
         )
         
         kpi3.metric(
             label="A/C Balance ＄",
-            value=f"$ {round(balance,2)} ",
-            delta=-round(balance / count_married) * 100,
+            value=f"$ {round(avg_donation,2)} ",
+            delta=-round(avg_donation / avg_donation) * 100,
         )
 
         # create two columns for charts
@@ -84,13 +77,13 @@ for seconds in range(200):
         with fig_col1:
             st.markdown("### First Chart")
             fig = px.density_heatmap(
-                data_frame=df, y="age_new", x="marital"
+                data_frame=df, y="amount", x="source_wallet"
             )
             st.write(fig)
             
         with fig_col2:
             st.markdown("### Second Chart")
-            fig2 = px.histogram(data_frame=df, x="age_new")
+            fig2 = px.histogram(data_frame=df, x="created_at")
             st.write(fig2)
 
         st.markdown("### Detailed Data View")
