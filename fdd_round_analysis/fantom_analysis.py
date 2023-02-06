@@ -15,6 +15,12 @@ with siteHeader:
   st.title('Welcome to Fantom Round Analysis!')
   st.text('In this project we are going to breakdown analysis of the round contributions and identify possible sybil behaviour')
 
+  gsheet_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTqCQ3-PFdTVUqEr2bGO4fO88w6zgXdwKLDPz6tarQyDscv6e6FekNiY4uZimyMDxXeocXQ2yZ8nIFr/edit?usp=sharing"
+  conn = connect()
+  rows = conn.execute(f'SELECT * FROM "{gsheet_url}"')
+  df_gsheet = pd.DataFrame(rows)
+  st.write(df_gsheet)
+  
   col1, col2, col3 = st.columns(3)
   col1.metric("Grant applications", "10")
   col2.metric("Unique contributors", "900")
