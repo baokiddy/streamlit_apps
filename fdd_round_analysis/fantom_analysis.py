@@ -21,6 +21,14 @@ df = get_data()
 
 st.title("demo of rounds dashboard")
 
+projects = [string(row["destination_wallet"]) for row in fantom_data]
+donations = [float(row["amount"]) for row in fantom_data]
+n_projects = nunique(projects)
+avg_donation = mean(donations)
+    
+    print("# of Projects", n_projects)
+    print("Avg Donation", avg_donation)
+
 # top-level filters
 project_filter = st.selectbox("Select the Project", pd.unique(df["destination_wallet"]))
 
