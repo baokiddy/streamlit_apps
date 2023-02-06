@@ -20,8 +20,8 @@ def get_data() -> pd.DataFrame:
 df = get_data()
 
 st.title("demo of rounds dashboard")
+st.write("Column names:", fantom_data.columns)
 
-print(fantom_data.columns)
 #projects = fantom_data["destination_wallet"].tolist()
 #donations = fantom_data["amount"].tolist()
 #n_projects = len(np.unique(projects))
