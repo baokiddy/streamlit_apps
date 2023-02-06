@@ -37,44 +37,44 @@ count_donors = int(
 )
 projects = np.sum(df["amount"])
 
-    with placeholder.container():
+with placeholder.container():
 
         # create three columns
-        kpi1, kpi2, kpi3 = st.columns(3)
+    kpi1, kpi2, kpi3 = st.columns(3)
 
         # fill in those three columns with respective metrics or KPIs
-        kpi1.metric(
-            label="Age ⏳",
-            value=round(avg_donation),
-            delta=round(avg_donation) - 10,
-        )
+    kpi1.metric(
+        label="Age ⏳",
+        value=round(avg_donation),
+        delta=round(avg_donation) - 10,
+    )
         
-        kpi2.metric(
-            label="Married Count 💍",
-            value=int(avg_donation),
-            delta=-10 + avg_donation,
-        )
+    kpi2.metric(
+        label="Married Count 💍",
+        value=int(avg_donation),
+        delta=-10 + avg_donation,
+    )
         
-        kpi3.metric(
-            label="A/C Balance ＄",
-            value=f"$ {round(avg_donation,2)} ",
-            delta=-round(avg_donation / avg_donation) * 100,
-        )
+    kpi3.metric(
+        label="A/C Balance ＄",
+        value=f"$ {round(avg_donation,2)} ",
+        delta=-round(avg_donation / avg_donation) * 100,
+    )
 
         # create two columns for charts
-        fig_col1, fig_col2 = st.columns(2)
-        with fig_col1:
-            st.markdown("### First Chart")
-            fig = px.density_heatmap(
-                data_frame=df, y="amount", x="source_wallet"
-            )
-            st.write(fig)
+    fig_col1, fig_col2 = st.columns(2)
+    with fig_col1:
+        st.markdown("### First Chart")
+        fig = px.density_heatmap(
+            data_frame=df, y="amount", x="source_wallet"
+        )
+        st.write(fig)
             
-        with fig_col2:
-            st.markdown("### Second Chart")
-            fig2 = px.histogram(data_frame=df, x="created_at")
-            st.write(fig2)
+    with fig_col2:
+        st.markdown("### Second Chart")
+        fig2 = px.histogram(data_frame=df, x="created_at")
+        st.write(fig2)
 
-        st.markdown("### Detailed Data View")
-        st.dataframe(df)
+    st.markdown("### Detailed Data View")
+    st.dataframe(df)
         time.sleep(1)
