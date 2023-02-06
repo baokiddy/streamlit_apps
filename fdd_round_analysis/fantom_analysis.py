@@ -10,11 +10,11 @@ newFeatures = st.container()
 modelTraining = st.container()
 
 #### ATTEMPT TO CACHE: not operable; Error: unable to get local issuer certificate (_ssl.c:1129)
-##dataset_url = "https://raw.githubusercontent.com/fdd_round_analysis/data/fantom_data_analysis_by_data_subset.csv"
-##@st.experimental_memo
-##def get_data() -> pd.DataFrame:
-##    return pd.read_csv(dataset_url)
-##df = get_data()
+dataset_url = "https://raw.githubusercontent.com/baokiddy/streamlit_apps/fdd_round_analysis/data/fantom_data_analysis_by_data_subset.csv"
+@st.experimental_memo
+def get_data() -> pd.DataFrame:
+    return pd.read_csv(dataset_url)
+df = get_data()
 
 rc_dataExploration, ls_dataExploration, sf_dataExploration, fn_dataExploration = st.tabs(["Revoke.cash", "LoanShark", "SymphonyFinance", "FantomNames"])
 
