@@ -21,7 +21,7 @@ df = get_data()
 
 st.title("demo of rounds dashboard")
 
-projects = [str(row["destination_wallet"]) for row in fantom_data]
+projects = [list(row["destination_wallet"]) for row in fantom_data]
 donations = [float(row["amount"]) for row in fantom_data]
 n_projects = np.unique(projects)
 avg_donation = np.mean(donations)
