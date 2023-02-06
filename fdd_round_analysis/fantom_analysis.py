@@ -17,6 +17,9 @@ with siteHeader:
   st.title('Welcome to Fantom Round Analysis!')
   st.text('In this project we are going to breakdown analysis of the round contributions and identify possible sybil behaviour')
 
+  df = pd.DataFrame({"one": [1, 2, 3], "two": [4, 5, 6], "three": [7, 8, 9]})
+  st.write(df)
+  
   gsheet_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTqCQ3-PFdTVUqEr2bGO4fO88w6zgXdwKLDPz6tarQyDscv6e6FekNiY4uZimyMDxXeocXQ2yZ8nIFr/pub?gid=451420609&single=true&output=csv"
   conn = connect()
   rows = conn.execute(f'SELECT * FROM "{gsheet_url}"')
@@ -28,7 +31,7 @@ with siteHeader:
   col2.metric("Unique contributors", "900")
   col3.metric("Total amount of contributions", "100000", "-10 from yesterday")
 
-  fantom_data = pd.read_csv('data/fantom_data_analysis_by_data_subset.csv') 
+  fantom_data = pd.read_csv(gsheet_url)
   fantom_data['amount_donated'] = fantom_data['amount_donated'].astype('string')
 
   st.header('Distribution of donations')
