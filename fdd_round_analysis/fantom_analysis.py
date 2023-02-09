@@ -26,7 +26,7 @@ def load_fantom_data():
 st.write('Top 10 Projects by Donation Volume')
 grouped = fantom_data.groupby("project_title").sum().sort_values("amount", ascending=False)
 top10 = grouped.head(10)
-pivoted = top10.pivot(index='currency', columns='project_id', values='amount')
+pivoted = top10.pivot(index='token', columns='project_title', values='amount')
 st.area_chart(pivoted, use_container_width=True)
 
 ##example of a dataframe that users can interact with
