@@ -15,21 +15,21 @@ st.title("demo of rounds dashboard")
 
 fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
 
+##optional caching; more important once live.
 @st.cache
 def load_fantom_data():
     return fantom_data
+#fantom_data = load_fantom_data()
 
+
+##area chart; stacked by token
 st.write('Top 10 Projects by Donation Volume')
 grouped = fantom_data.groupby("project_title").sum().sort_values("amount", ascending=False)
 top10 = grouped.head(10)
-st.area_chart(top10)
+pivoted = top10.pivot(index='currency', columns='project_id', values='amount')
+st.area_chart(pivoted, use_container_width=True)
 
-print("Top 10 Projects:")
-print(top10)
-print("Sum of all donations:", grouped["amount"].sum())
-
-#fantom_data = load_fantom_data()
-
+##example of a dataframe that users can interact with
 st.write('Anomalous Donations for Review')
 df = pd.DataFrame(fantom_data)
 st.write(df[:1000])
