@@ -6,10 +6,9 @@ import json
 import numpy as np
 
 # Gitcoin protocol datasets
-file_path_applications = 'data/oss_round_applications.json'
-file_path_votes = 'data/oss_round_votes_raw.json'
-round_name = 'oss'
-
+file_path_applications = 'data/ethereum_round_applications.json'
+file_path_votes = 'data/ethereum_round_votes_raw.json'
+round_name = 'ethereum'
 
 def vote_processing(df_votes):
     # Votes data
@@ -38,6 +37,8 @@ def vote_processing(df_votes):
 
     votes_dataset["amount"] = votes_dataset.apply(lambda x: int(x.amount) / 10 ** currencies[x.token]["decimals"], axis=1)
     votes_dataset["token"] = votes_dataset.token.apply(lambda x: currencies[x]["symbol"])
+
+    votes_dataset.to_csv(f'data/{round_name}_grant_votes.csv', index=False)
 
     return votes_dataset
 
@@ -262,6 +263,8 @@ def application_processing(df_projects, round_name):
 
     projects_dataset['project_wallet'] = projects_dataset['project_wallet'].str.lower()
 
+    projects_dataset.to_csv(f'data/{round_name}_grant_applications.csv', index=False)
+
     return projects_dataset
 
 
@@ -282,8 +285,12 @@ def processing(file_app, file_votes, round_name):
 
     data_join = pd.merge(vote_df, app_df, how="left", on=['project_wallet'])
 
+    data_join.to_csv(f'data/{round_name}_joined_dataset.csv', index=False)
 
-    return vote_df, app_df, data_join
+    return 'Completed'
 
-if __name__ == '__main__':  
-    processing(file_path_applications, file_path_votes, round_name)
+processing(file_path_applications, file_path_votes, round_name)
+
+
+# if __name__ == '__main__':  
+#     processing(file_path_applications, file_path_votes, round_name)

@@ -1,0 +1,280 @@
+application_round,project_wallet,last_updated,project_id,title,description,website,github_user,project_github,project_twitter,previous_funding,team_size,verified_twitter_or_github,created_at,updated_at
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xb7081fd06e7039d198d10a8b72b824e60c1b1e16,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:111,Otterscan,"Otterscan is an open-source, fast, local, laptop-friendly Ethereum block explorer",https://otterscan.io,wmitsuda,,otterscan,Other grants,1,yes,2023-01-10 22:58:47,2023-01-10 22:58:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xa47669cbc53985333423e4d3d00188f4049fb695,0,10:0x8e1bD5Da87C14dd8e08F7ecc2aBf9D1d558ea174:13,Optimism DAppNode Package,"This package allows home users to run a full Optimism node on their DAppNode.
+
+I am raising funds to be able to dedicate more time getting the package ready for the upcoming Optimism Bedrock update
+
+A little funding will go a long way with this project 🔴🌱",https://github.com/DanieleSalatti/DAppNodePackage-optimism,DanieleSalatti,DanieleSalatti,DanieleSalatti,Grants,1,"Twitter yes, GitHub fails",2023-01-16 16:24:23,2023-01-16 16:24:23
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x97843608a00e2bbc75ab0c1911387e002565dede,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:127,BuidlGuidl,"A curated group of Ethereum builders creating products, prototypes, and tutorials to enrich the web3 ecosystem.",https://BuidlGuidl.com,,BuidlGuidl,buidlguidl,only EF grants,40,idk?,2023-01-11 21:17:47,2023-01-11 21:17:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xa47669cbc53985333423e4d3d00188f4049fb695,0,10:0x8e1bD5Da87C14dd8e08F7ecc2aBf9D1d558ea174:13,Optimism DAppNode Package,"This package allows home users to run a full Optimism node on their DAppNode.
+
+I am raising funds to be able to dedicate more time getting the package ready for the upcoming Optimism Bedrock update
+
+A little funding will go a long way with this project 🔴🌱",https://github.com/DanieleSalatti/DAppNodePackage-optimism,DanieleSalatti,DanieleSalatti,DanieleSalatti,Grants,1,"Twitter yes, Github no (failed)",2023-01-11 21:15:35,2023-01-11 21:15:35
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x7f06ac71366631157551d97559b82975c293fdba,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:120,Ethereum on ARM,"Help us to build a <$400 PnP Ethereum full/archive/staking node based on ARM boads that uses only ~10 watts of power to run.
+
+Ethereum on ARM provides a PnP Ubuntu server image for the Rock 5B and the Raspberry Pi 4 that run both Execution and Consensus clients as a Systemd service and automatically turns the device into a full Ethereum EL+CL node or a home staking box.
+
+This is what we've been at these last months (thanks to your contributions): 
+
+- Support and include more Ethereum clients. Current list: Geth, Erigon, Besu, Nethermind, Prysm, Nimbus, Teku and Lighthouse
+- Testing and releasing an image for the Radxa Rock 5B device
+- Updating the documentation and translating to Spanish
+- Research and include other blockchain components in the image: IPFS, Swarm, Status, StarkNet
+- Research on Layer 2 solutions such as Polygon and Arbitrum
+- RISC V: Continue to research and try to run an node on this architecture. Wouldn’t It be great to run an Ethereum node on Open Hardware?.
+
+Other info:
+
+We are running a $365 Ethereum stake device with 3 validators using 10 watts  
+			https://twitter.com/EthereumOnARM/status/1597889744821944320
+
+Thanks for your donations and support. 
+
+Our repository
+
+https://github.com/diglos/ethereumonarm
+
+Documentation page
+
+https://ethereum-on-arm-documentation.readthedocs.io
+
+Discord Channel
+
+https://t.co/LvKzLMSXlZ
+
+Check our twitter account for updates
+
+https://twitter.com/EthereumOnARM
+
+Ethereum on ARM is An EOA Blockchain Labs, S.L. company project.",https://ethereum-on-arm-documentation.readthedocs.io/,diglos,,EthereumOnARM,"Gitcoin Grants, EF and QF rounds",2,Yes,2023-01-11 13:26:23,2023-01-11 13:26:23
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x08a3c2a819e3de7aca384c798269b3ce1cd0e437,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:215,Chainlist,"We track all RPCs available for all chains, monitoring their latency and privacy policies, so users can evaluate RPCs without having to waste their time waddling through all their docs and legalese.",https://chainlist.org/,0xngmi,DefiLlama,DefiLlama,Donations + self-funding,2,Yes,2023-01-15 23:49:35,2023-01-15 23:49:35
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x6c5a2688c83c806150ca9dd0b2f10f16f8f1c33e,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:221,L2BEAT,"L2BEAT is an analytics and research website about Ethereum layer two (L2) scaling.
+
+We provide a comparison of the various Ethereum L2 systems available today. Because of our commitment to education, we present different non-trivial metrics aside from Total Value Locked (TVL). We have carefully examined each L2 project to determine its technology's inner workings and associated risks. We act as an objective watchdog and develop public goods in the L2 space. 
+
+In the future, we plan to introduce more metrics, upgrade the risk framework, automatize our monitoring, and build special-purpose tools for various L2s that empower users to execute operations like forced transactions or view the L2 state from the perspective of L1.
+
+By donating to this grant, you support our continuous efforts to bring education and transparency to the L2 space.
+
+Thank you very much for your support!",https://l2beat.com,,l2beat,l2beat,"Ethereum Foundation Grants, Donations, Private Investment",13,Yes,2023-01-16 15:20:11,2023-01-16 15:20:11
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x4557b18e779944bfe9d78a672452331c186a9f48,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:232,wagmi,"wagmi is a collection of React Hooks containing everything you need to start working with Ethereum. It’s used at organizations like ENS, Sushi, LooksRare, WalletConnect, Stripe Crypto, and Gitcoin. wagmi makes it easy to ""Connect Wallet,"" display ENS and balance information, sign messages, interact with contracts, and much more — all with caching, request deduplication, and persistence.
+
+Your contributions support the entire wagmi project. The funds collected are used to support the core team and compensate significant contributions to the project. Our work on wagmi is only sustainable thanks to the generous financial backing of our Gitcoin donors.",https://wagmi.sh,wagmi-dev,wagmi-dev,wagmi_sh,GitHub Sponsors,2,Yes,2023-01-16 21:20:59,2023-01-16 21:20:59
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xc9a872868afa68ba937f65a1c5b4b252dab15d85,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:217,Lighthouse by Sigma Prime,"Lighthouse is an Ethereum consensus-layer client. We provide a stable, performant and open-source implementation which is relied upon by a significant portion of the Ethereum network.
+
+We're actively engaged in research, specification and implementation. Providing a safe and scalable base-layer is our commitment and passion.",https://github.com/sigp/lighthouse,,sigp,sigp_io,"Ethereum Foundation, Gitcoin Grants, Sigma Prime, various other grant programs.",10,Yes,2023-01-16 00:37:59,2023-01-16 00:37:59
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x32b74b90407309f6637245292cd90347de658a37,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:206,Somer Esat Ethereum Staking Guides (Ubuntu),"Hello,
+
+I have created a series of Ethereum mainnet and testnet staking guides on Ubuntu for: 
+
+- Ethereum Consensus Clients: Lighthouse, Nimbus, Prysm, Teku, and Lodestar.
+
+- Ethereum Execution Clients: Besu, Erigon, Geth, and Nethermind.
+
+These guides are intended for new/intermediate users, and are hopefully a reasonable and pleasant onboarding vehicle for newcomers to the Ethereum staking community.
+
+Upcoming Edits: 
+
+- Instructions for withdrawals.
+
+- Migration guides to encourage client diversity.
+
+Your support is appreciated <3
+
+Somer",https://someresat.medium.com,SomerEsat,,SomerEsat,Gitcoin Grants,1,Yes,2023-01-14 21:41:59,2023-01-14 21:41:59
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x9531c059098e3d194ff87febb587ab07b30b1306,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:128,rotki,"Rotki is an open source portfolio tracking, accounting, analytics and tax reporting tool that protects your privacy.
+
+
+
+The mission of Rotki is to bring transparency into the crypto and financial sectors through the use of open source. Most importantly unlike virtually every other competing service which consists of closed source SaaS onto which you are forced to hand over all your financial data, with Rotki your data is stored encrypted locally in your computer. It enables you to take ownership of your financial data.",https://rotki.com,rotki/rotki,rotki,rotkiapp,Grants + Donations. A little bit of revenue,6,Twitter yes. Github failed. No idea why.,2023-01-11 21:33:23,2023-01-11 21:33:23
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xd165df4296c85e780509fa1eace0150d945d49fd,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:49,EthStaker,"EthStaker is a welcoming first, knowledgeable second community dedicated to supporting Ethereans in safely and securely staking their ETH by creating guides, instructional videos, educational content and technical support. ",https://ethstaker.cc/,,eth-educators,ethStaker,Ethereum Foundation,8,Yes,2023-01-11 21:17:47,2023-01-11 21:17:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xa47669cbc53985333423e4d3d00188f4049fb695,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:185,Optimism DAppNode Package (Mainnet),"This package allows home users to run a full Optimism node on their DAppNode.
+
+I am raising funds to be able to dedicate more time getting the package ready for the upcoming Optimism Bedrock update
+
+A little funding will go a long way with this project 🔴🌱",https://github.com/DanieleSalatti/DAppNodePackage-optimism,DanieleSalatti,DanieleSalatti,DanieleSalatti,Grants,1,"Twitter yes, GitHub fails",2023-01-13 15:32:47,2023-01-13 15:32:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xd41bdbd4101e02057b7f621f681540ef3ac81e55,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:201,smol-evm,A hacker-friendly Python implementation of the Ethereum yellow paper from scratch.,https://smol-evm.glitch.me,karmacoma-eth,,smol_evm,received a 1 ETH grant from Milk Road and Thirdweb before creating the Gitcoin grant,"1 main dev (karmacoma), 9 people in the dev chat",yes,2023-01-15 22:18:47,2023-01-15 22:18:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x9d4e94db689bc471e45b0a18b7bda36fccec9c3b,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:47,beaconcha.in,"beaconcha.in is an open source explorer that provides users with an easy and accessible way to explore the Ethereum network. 
+
+Our explorer is designed to be user-friendly, making it accessible to non-technical users. In addition to our web-based explorer, we also offer an open source mobile app for iOS and Android, providing users with the ability to monitor their validators on the go.
+
+One of our key features is the integration of both the consensus layer and the execution layer in a single explorer. 
+This allows users to easily access and analyze data from both layers, providing a more comprehensive view of the network.",https://beaconcha.in/,Buttaa,,beaconcha_in,N/A,10,No,2023-01-13 20:30:23,2023-01-13 20:30:23
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x9cce47e9cf12c6147c9844adbb81fe85880c4df4,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:107,NiceNode: Run a node — just press start,"
+The current options to run a node require technical skills to open a terminal and run commands or install a new operating system. Running a node should be as simple as downloading an app.
+
+
+
+I started NiceNode to solve this. NiceNode is an app that runs, monitors, and controls a node. 
+
+
+
+Your contributions will fund a whole new and improved UI/UX, more node options, and a foundation for staking with validators!
+
+NiceNode is currently available for Linux (tested on Ubuntu), Windows, and macOS and the alpha release is ready for downloading and testing. Please try out NiceNode and give feedback and suggestions! Report a problem or request a feature on NiceNode’s Github.
+
+
+
+For now only Execution clients (Besu, Nethermind, and Geth) and Consensus Clients (Lodestar, Nimbus, Teku, Lighthouse, and Prism) are supported by NiceNode, but stay tuned as the next releases will include the ability to run Layer 2 nodes and other Ethereum ecosystem nodes, and testnet nodes! 
+
+
+
+""Hey, client teams and others!"" -> Open a Github pull request to add a node or modify the default config of an existing now!",https://nicenode.xyz,jgresham,nicenode,NiceNodeApp,"Gitcoin, CityDAO, EF ESP program",3,"yes for Twitter, working on Github (was an error)",2023-01-10 20:25:23,2023-01-10 20:25:23
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x23ada6e6a9e9d4ecddd185e3ec353163bceebf2a,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:48,"PLUME: Pseudonymously Linked Unique Message Entities, aka Verifiably Deterministic Signatures on Ethereum","Verifiably deterministic signatures on Ethereum make it possible to have a unique, anonymous identity. Developing this cryptographic primitive into wallets will unlock sybil-resistant anonymous apps like zk nullifiers for anonymous unlinked airdrops, anonymous decentralized voting which only allows one vote per account, and message boards with a consistent identity. We think that fully executing this work will create a whole new class of dapps and web3 social apps with pseudonymity.
+
+
+
+This grant will go to helping to integrate a new, non-interactive signature scheme into wallets such as Metamask, filing an EIP, and engineering the zero knowledge cryptography behind it. Note that this scheme offers an improvement to semaphore or tornado cash nullifiers, because the first few people who sign up will not have small anonymity sets. The grant will also help to publish the paper that proves the security of the scheme via a DDH-VRF argument, and pay for conference expenses so it can be presented more widely. It will be split amongst Kobi, Aayush, Richard, Piotr, and anyone else who would like to help productionize this work!
+
+
+
+We will likely call the final version your plume -- a privately linked unique message entity. In other words, we will deploy verifiably deterministic signatures on Ethereum.
+
+
+
+If you'd like to read the paper, it can be found at https://aayushg.com/thesis.pdf. The slides to fully explain the new scheme are found here: https://docs.google.com/presentation/d/1mKtOI4XgKrWBEPpKFAYkRjxZsBomwhy6Cc2Ia87hAnY, and the code is here: https://github.com/zk-nullifier-sig/zk-nullifier-sig. The academic paper is here: https://eprint.iacr.org/2022/1255. A blog post is here: https://blog.aayushg.com/posts/nullifier. DM @yush_g on Twitter with questions or in the Personae Discord! Initial research was funded by a $4k grant from 0xPARC and done as part of an MIT masters thesis.
+
+
+
+UPDATE: Your money has gone to good use! Due to your generosity, we were able to push forward a lot of progress, including that we were able to develop a Metamask snap (deployed at nullifier.xyz) and push an independent Javascript implementation that discovered an overflow bug in both of the Rust implementations! We also are building towards a burner wallet integration and EIP, both of which we are actively polishing drafts on. This project is now being developed to power future anonymity tech at Personae Labs.",https://github.com/zk-nullifier-sig/zk-nullifier-sig,divide-by-0,personaelabs,yush_g,N/A,4,Yes,2023-01-14 02:29:35,2023-01-14 02:29:35
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x6e41fe2f8303b89c9dbccabe59a7f7f8f4312ca9,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:173,Stereum - Ethereum Node Setup,"🍄 THE PROBLEM  
+
+Setting up an Ethereum Node is technically demanding and needs a lot of research & preparation to do. Being confronted with this challenge a lot of nontechnical people therefore, even if they are in the position of owning 32 ETH, are choosing to use a staking service to not risk their funds, which in turn slowly centralises the network. 
+
+🍄 OUR SOLUTION 
+
+Stereum is our answer to this problem, a toolkit to simplify the process of setting up and maintaining an Ethereum/Gnosis Node using an intuitive GUI to abstract the installation process down to a few clicks, lessening the technical entry barrier for the average person. 
+
+To use Stereum, you download the launcher & connect remotely to your fresh Ubuntu server.  
+
+In three clicks, Stereum configures all necessary prerequisites your server has to meet, installs and runs Ethereum client software, and ensures that your node is properly connected and synced with the network.  
+
+By setting up your own node  with Stereum you are able to participate in Solo Staking in your preferred network and validate transactions and blocks. The node also serves as your gateway to the network for data science, dApp usage and development.  
+
+With Stereum you also have the opportunity to run different node related protocols (like SSV, etc.) & profit off of there unique architecture.  
+
+Stereum, our Ethereum Node Installation, Setup & Management tool aims to be the most flexible way to leverage your node for ETH staking, data science dApp hosting & development.  
+
+We hope to explore every hermit’s dream with you! 
+
+🍄 USE OF FUNDS 
+
+Your contribution is greatly appreciated by the team and will be used in various ways – development, testing and security audits. We spend the funds generated through grants and donations purely on tasks, that will benefit the progress of the project and therefore the decentralisation of Ethereum as well as protocols on it.  
+
+🍄 FURTHER LINKS
+
+	🍄 Project Website - https://stereum.net/
+
+	🔨 GitHub - https://github.com/stereum-dev/ethereum-node
+
+	💬 Discord - https://discord.gg/DzAwgnSXtB
+
+	📰 Twitter - https://twitter.com/stereumdev
+
+	📺 YouTube - https://www.youtube.com/@Stereum
+
+",https://stereum.net,stefa2k,stereum-dev,stereumdev,Grants,10,yes,2023-01-13 07:18:47,2023-01-13 07:18:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xc8f9f8c913d6ff031c65e3bf7c7a51ad1f3a86e5,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:208,Lodestar,"Lodestar is a Typescript ecosystem for Ethereum consensus, developed by ChainSafe Systems.
+
+Our flagship product is our production-capable beacon chain and validator client.
+
+In addition, we maintain public repositories of useful tools for public use. Some of these libraries include BLS, SSZ, Discv5, Gossipsub, and Noise.
+
+We are committed to maintaining these critical libraries for use in our client and for the wider community.
+
+Lodestar's niche is in its implementation language, Typescript. Our software and tooling is uniquely situated as the go-to for researchers and developers for rapid prototyping and browser usage. Millions of developers around the world are familiar with Typescript, and Lodestar's high-quality codebases are excellent introductions to the Ethereum world.
+
+Lodestar has also been a leader in light client research, standardization, and implementation of Ethereum light clients. We strive to work with other client implementers, researchers and developers to demonstrate the importance of having browsers utilize trustless data directly from blockchain.
+
+A demo of our light client is available at https://lodestar-lightclient.chainsafe.io/.
+
+Visit us at https://lodestar.chainsafe.io",https://lodestar.chainsafe.io,,chainsafe,lodestar_eth,Ethereum Foundation,8,Yes,2023-01-15 21:02:35,2023-01-15 21:02:35
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x70ccbe10f980d80b7ebaab7d2e3a73e87d67b775,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:86,Vyper Smart Contract Language,Pythonic Smart Contract Language for the EVM,https://vyperlang.org,fubuloubu,vyperlang,vyperlang,Grants,2,Yes,2023-01-09 16:19:47,2023-01-09 16:19:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x8ba1f109551bd432803012645ac136ddd64dba72,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:62,ethers.js,"The ethers.js library is a complete and compact library for interacting with the Ethereum Blockchains and their ecosystem.
+
+With over 4 million npm installs per month, it can be used to create dapps, wallets and utilities as well as debug and analyze blockchain data.",https://ethers.org,ricmoo,ethers-io,ricmoo,Donations + Grants + EF,1,yes,2023-01-07 06:45:47,2023-01-07 06:45:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x187089b65520d2208ab93fb471c4970c29eaf929,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:85,Ape Framework,"Ape is a smart contract development tool for Pythonistas, Data Scientists, and Security Professionals working on Ethereum and other EVM and non-EVM blockchain ecosystems.",https://apeworx.io,fubuloubu,ApeWorX,ApeFramework,Venture Capital; Grants,12,Yes,2023-01-09 16:01:35,2023-01-09 16:01:35
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x242ba6d68ffeb4a098b591b32d370f973ff882b7,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:230,Blockscout 2.0 - Premium Open-Source Block Explorer,"
+PROBLEM
+
+Etherscan provides a great block explorer for web3, much like Alphabet provides a great search engine for web2 and Microsoft provides a great OS for businesses. However, core Ethereum values run counter to a closed-source, single-solution ideology for a decentralized blockchain network. Open-source alternatives are absolutely required to augment, improve, and democratize the block explorer experience. 
+
+Ethereum-based blockchains and L2s need better open-source explorer options to support: 
+-Checks and balances (is the data accurate?)
+-Redundancy and resiliency (what if Etherscan is down?)
+-Community-driven features and innovation (I want to improve and customize that explorer!)
+-Transparency (How does it work?)
+-Quick, cost-effective implementation (I don’t have much capital but I need to spin up an explorer yesterday!)
+-Trustlessness (I trust the code, not any single entity in charge of all data presentation.)
+
+SOLUTION
+
+Blockscout has been in production for nearly 5 years. We provide an open-source explorer used by more than 100 chains in the space, including public goods support for an Ethereum mainnet instance. 
+
+Blockscout has been used by small chains, big chains, private chains, test chains, L2 chains and many others to quickly spin up an instance and provide transactional transparency right away for their users...AND we know that Blockscout needs to be improved to compete with and provide a viable alternative to closed-source explorers.
+
+HOW FUNDING WILL BE USED
+
+We’ve started working on a major overhaul called Blockscout 2.0. It aims to provide all the views, functionality and UX you expect from a premium block explorer. In addition, new features including Rollup support, an optimized API layer, DApp marketplace, and a new microservices infrastructure written in Rust are all in active development. More on the 2.0 roadmap -> https://docs.blockscout.com/about/roadmap/blockscout-2.0
+
+Blockscout 2.0 is currently being built, and with your help we can bring it to the community much faster, with many more features, and with much greater impact. We are particularly excited about the new React UI for users and Rust microservices for developers. With this new architecture in place, our team as well as the greater developer community will be able to easily customize functionality without compromising performance.
+
+We will also devote grant funding resources to improving rollup support. Rollup usage is growing every day, and we need to provide comprehensive views to support this ever-expanding world of layer 2 data. 
+
+As we continue to decentralize the future, the tools and infrastructure supporting decentralization must also follow this pattern. We appreciate your funding to support a transparent, open-source, premium block explorer! ",https://www.blockscout.com,,https://github.com/blockscout,blockscoutcom,https://docs.blockscout.com/about/funding,20,No - verified in previous rounds,2023-01-16 21:12:35,2023-01-16 21:12:35
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xb35cd25e91b376eafba79abe71d78814dec3401a,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:133,Ethereum Magicians,"TL:DR Ethereum Magicians continues to support coordination and development in the ecosystem. Funds raised through this grant will be used to pay people to coordinate and navigate community to better educational resources, educate community, encourage people to work and build in open source, support Ethereum Core development.
+
+
+
+The Ethereum Magicians is a Community of Individuals collaborating on improving the Ethereum Protocol. FEM (Fellowship of Ethereum Magicians) forum provides a high signal noise free space for discussing any Ethereum Protocol Improvements, supporting the community in protocol decision making, and providing space for high quality discussions.
+
+
+
+The Ethereum Magicians community is focused mainly around Ethereum Improvement Proposals (EIPs) and Ethereum Request for Comments (ERCs). We provide a key communication channel (forum) for core developers and the community to discuss anything EIP or Ethereum Improvements and Protocol related. 
+
+We are hanging out on https://ethereum-magicians.org/ forum and sometimes in person at bigger events. 
+
+
+
+The ongoing benefit that we bring to the community is that our work empowers decision-makers to gather feedback and move the tech forward, and encourages developers and researchers to collaborate closely via the Magicians' Forum. This helps make Ethereum the best technology that it can be!
+
+
+
+Funds received will be managed by members of the Operations Ring, a group which manages resources for the Fellowship of Ethereum Magicians, organises events, and maintains the Forum. Your donation will be used to organise upcoming events and discussions, operate and pay for maintaining and moderating the FEM forum and expenses related to these activities.
+
+ 
+
+All contributions to our grant highly appreciated 🙏",https://ethereum-magicians.org,,,https://twitter.com/EthMagicians,Donations,2,yes,2023-01-11 23:19:11,2023-01-11 23:19:11
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0xf503017d7baf7fbc0fff7492b751025c6a78179b,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:68,TrueBlocks and the Unchained Index,"TrueBlocks and the Unchained Index are open-source, local-first indexing solutions for any EVM-based blockchains. It provides censorship-resistant, private, and fast access to immutable data--there is no “recentralization” of chain data. 
+
+TrueBlocks uniquely: 
+
+- Creates an address-optimized index allowing for 18-decimal-place-accurate-reconciliation,
+- Provides local-first queries, caching, and transformations without the fear of third-party snooping,
+- Produces and distributes—for the public good—an “equitably” maintained and low-cost index through content-addressable storage,
+- Retains the integrity of the data through a “reproducible” extraction process,
+- Offers a set of technologies that can be used as building blocks for “truly” decentralized applications,
+- Scales in a way natural to web3 by leveraging content-addressable storage (IPFS) to shard and cache received data.
+
+From their desktop, users can/will be able to privately access their own historical blockchain activity. Accomplishing:
+
+- Monitor token holdings and market values over time,
+- Manage securely and view NFT holdings,
+- Determine gas fees paid over time,
+- View and export fully reconciled transaction histories by account/asset
+- Watch for and notify about airdrops
+- Track activity with other addresses
+- Receive off-chain email notifications/triggers of activity on addresses (future...)
+- Watch DAO activity (What proposals are pending? Must I vote on something? Who has voted for what in the past?)
+- Conduct DAO-level monitoring and accounting
+- Manage ENS names and expiration dates
+- Programmatically and quickly filter, sort, and enhance blockchain data
+- Consolidate data across accounts/addresses
+- Build testing algorithms (e.g. ""digital twins"") to facilitate smart contract testing, auditing, ongoing monitoring, and simulation
+- Take our highly efficient and precise indexing engine, metadata layer (time and name databases), and query functionality and add more specialized, use-case-focused, features (e.g. different UIs, data visualization, exporting options).",https://trueblocks.io,tjayrush,TrueBlocks,tjayrush,"Self funded. Ethereum Foundation Grant Sept. 2022, GitCoin Grants",2 engineers,Yes.,2023-01-07 16:45:47,2023-01-07 16:45:47
+0xe575282b376e3c9886779a841a2510f1dd8c2ce4,0x08a3c2a819e3de7aca384c798269b3ce1cd0e437,0,1:0x03506eD3f57892C85DB20C36846e9c808aFe9ef4:207,DefiLlama APIs,"DefiLlama provides multiple APIs for free that are used by multiple projects:
+- Our price API, which prices all common tokens along with custom ones that aren't directly traded (uniswap LPs, curve LPs, yearn yTokens, GLP, compound's cTokens...)
+- Data APIs and csv exports for all the data that we collect at defillama, such as TVL, volume, fees, revenue, APYs, funding rounds...
+- Some indexing APIs such as getting the closest block to a timestamp on all EVM chains
+- Function and event signature decoding for all contracts",https://defillama.com,0xngmi,DefiLlama,DefiLlama,Donations + self-funding,11 full time people + 2 interns,Yes,2023-01-14 22:00:59,2023-01-14 22:00:59
