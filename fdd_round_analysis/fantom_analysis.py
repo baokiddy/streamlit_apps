@@ -16,7 +16,11 @@ st.title("demo of rounds dashboard")
 st.write("Column names:", fantom_data.columns)
 
 @st.cache
-fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0) 
+def load_fantom_data():
+    fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
+    return fantom_data
+fantom_data = load_fantom_data()
+#fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0) 
 
 st.write('Anomalous Donations for Review')
 df = pd.DataFrame(fantom_data)
