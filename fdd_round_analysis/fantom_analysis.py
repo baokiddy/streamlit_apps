@@ -10,6 +10,7 @@ st.set_page_config(
     page_title="Fantom Round Dashboard",
     page_icon="📊",
     layout="wide",
+    page_config={"interval": None, "max_concurrent_streams": 1000}
 )
 
 st.title("demo of rounds dashboard")
