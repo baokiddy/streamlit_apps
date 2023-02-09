@@ -16,9 +16,9 @@ st.title("demo of rounds dashboard")
 
 fantom_data = pd.read_csv('data/abridgedfantom.csv', index_col=0)
 
-@st.cache
-def load_fantom_data():
-    return fantom_data
+#@st.cache
+#def load_fantom_data():
+#    return fantom_data
 
 #fantom_data = load_fantom_data()
 
