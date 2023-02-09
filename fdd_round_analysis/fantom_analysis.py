@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
 )
 
-fantom_data = pd.read_csv('data/fantom_data_analysis_by_data_subset.csv') 
+fantom_data = pd.read_csv('data/fantom_streamlit.csv') 
 
 @st.experimental_memo
 def get_data() -> pd.DataFrame:
