@@ -13,11 +13,22 @@ st.set_page_config(
 
 st.title("demo of rounds dashboard")
 
-fantom_data = pd.read_csv('data/abridgedfantom.csv', index_col=0)
+fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
 
 @st.cache
 def load_fantom_data():
     return fantom_data
+
+# Print the results
+print("Top 10 Projects:")
+print(top_10_projects)
+print("Sum of all donations:", grouped["amount"].sum())//////
+
+
+st.write('Simple Aggregate Donations: Top 10 Projects.')
+grouped = fantom_data.groupby("project_title").sum().sort_values("amount", ascending=False)
+top10 = grouped.head(10)
+st.area_chart(top10)
 
 #fantom_data = load_fantom_data()
 
