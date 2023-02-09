@@ -16,7 +16,6 @@ fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
 
 st.write('Anomalous Donations for Review')
 df = pd.DataFrame(fantom_data)
-print(df.get("vote_ts", "donor_wallet", "project_wallet", "project_title", "amount", "token"))
 st.write(df)
 #df = get_data()
 AgGrid(df)
