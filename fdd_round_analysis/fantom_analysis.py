@@ -24,9 +24,10 @@ def load_fantom_data():
 
 ##area chart; stacked by token
 st.write('Top 10 Projects by Donation Volume')
-grouped = fantom_data.groupby("project_title", "currency").sum().sort_values("amount", ascending=False)
+grouped = fantom_data.groupby("project_title").sum().sort_values("amount", ascending=False)
 top10 = grouped.head(10)
-st.area_chart(top10, x="project_title", use_container_width=True)
+topsums = top10.[['project_title','token', 'amount']].copy()
+st.area_chart(topsums, use_container_width=True)
 
 ##example of a dataframe that users can interact with
 st.write('Anomalous Donations for Review')
