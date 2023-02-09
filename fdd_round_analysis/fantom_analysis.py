@@ -14,7 +14,7 @@ st.set_page_config(
 
 st.title("demo of rounds dashboard")
 
-fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
+fantom_data = pd.read_csv('data/abridgedfantom.csv', index_col=0)
 
 @st.cache
 def load_fantom_data():
