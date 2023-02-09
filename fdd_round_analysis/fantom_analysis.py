@@ -19,16 +19,14 @@ fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
 def load_fantom_data():
     return fantom_data
 
-# Print the results
-print("Top 10 Projects:")
-print(top_10_projects)
-print("Sum of all donations:", grouped["amount"].sum())//////
-
-
-st.write('Simple Aggregate Donations: Top 10 Projects.')
+st.write('Top 10 Projects by Donation Volume')
 grouped = fantom_data.groupby("project_title").sum().sort_values("amount", ascending=False)
 top10 = grouped.head(10)
 st.area_chart(top10)
+
+print("Top 10 Projects:")
+print(top10)
+print("Sum of all donations:", grouped["amount"].sum())
 
 #fantom_data = load_fantom_data()
 
