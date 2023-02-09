@@ -1,5 +1,4 @@
 import streamlit as st
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 import pandas as pd
 from pandas.io.json import json_normalize
 import json
@@ -16,9 +15,9 @@ st.title("demo of rounds dashboard")
 
 fantom_data = pd.read_csv('data/abridgedfantom.csv', index_col=0)
 
-#@st.cache
-#def load_fantom_data():
-#    return fantom_data
+@st.cache
+def load_fantom_data():
+    return fantom_data
 
 #fantom_data = load_fantom_data()
 
@@ -26,7 +25,6 @@ st.write('Anomalous Donations for Review')
 df = pd.DataFrame(fantom_data)
 st.write(df[:1000])
 #df = get_data()
-AgGrid(df)
 
 st.write("Column names:", fantom_data.columns)
 
