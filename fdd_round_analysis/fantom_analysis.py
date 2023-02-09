@@ -1,9 +1,9 @@
 import streamlit as st
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 import pandas as pd
 from pandas.io.json import json_normalize
 import json
 import numpy as np
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 
 st.set_page_config(
