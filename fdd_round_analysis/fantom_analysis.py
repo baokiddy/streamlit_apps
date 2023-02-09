@@ -3,6 +3,7 @@ import pandas as pd
 from pandas.io.json import json_normalize
 import json
 import numpy as np
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 
 
 st.set_page_config(
@@ -11,13 +12,14 @@ st.set_page_config(
     layout="wide",
 )
 
-fantom_data = pd.read_csv('data/fantom_streamlit.csv') 
+fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0) 
 
-@st.experimental_memo
-def get_data() -> pd.DataFrame:
-    return fantom_data
-
-df = get_data()
+st.write('Anomalous Donations for Review')
+df = pd.DataFrame(fantom_data)
+print(df.get("vote_ts", "donor_wallet", "project_wallet", "project_title", "amount", "token"))
+st.write(df)
+#df = get_data()
+AgGrid(df)
 
 st.title("demo of rounds dashboard")
 st.write("Column names:", fantom_data.columns)
