@@ -12,8 +12,6 @@ st.set_page_config(
     layout="wide"
 )
 
-st.experimental_set_page_config(page_config={"interval": None, "max_concurrent_streams": 1000})
-
 st.title("demo of rounds dashboard")
 
 fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
@@ -22,7 +20,7 @@ fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
 def load_fantom_data():
     return fantom_data
 
-fantom_data = load_fantom_data()
+#fantom_data = load_fantom_data()
 
 st.write('Anomalous Donations for Review')
 df = pd.DataFrame(fantom_data)
