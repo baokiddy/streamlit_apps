@@ -13,20 +13,23 @@ st.set_page_config(
 )
 
 st.title("demo of rounds dashboard")
-st.write("Column names:", fantom_data.columns)
+
+fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
 
 @st.cache
 def load_fantom_data():
-    fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0)
     return fantom_data
+
 fantom_data = load_fantom_data()
-#fantom_data = pd.read_csv('data/fantom_streamlit.csv', index_col=0) 
 
 st.write('Anomalous Donations for Review')
 df = pd.DataFrame(fantom_data)
 st.write(df[:1000])
 #df = get_data()
 AgGrid(df)
+
+st.write("Column names:", fantom_data.columns)
+
 
 #projects = fantom_data["destination_wallet"].tolist()
 #donations = fantom_data["amount"].tolist()
