@@ -2,3 +2,4 @@ streamlit==1.17.0
 pandas
 base58==2.0.1
 numpy
+streamlit_aggrid
