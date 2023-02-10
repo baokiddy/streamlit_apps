@@ -1,2 +1,4 @@
 fdd_round_analysis/data/climate_joined_dataset.csv filter=lfs diff=lfs merge=lfs -text
 data/climate_joined_dataset.csv filter=lfs diff=lfs merge=lfs -text
+data/oss_joined_dataset.csv filter=lfs diff=lfs merge=lfs -text
+data/ethereum_joined_dataset.csv filter=lfs diff=lfs merge=lfs -text

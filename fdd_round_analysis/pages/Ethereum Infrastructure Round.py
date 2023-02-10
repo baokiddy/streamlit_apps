@@ -3,16 +3,14 @@ import pandas as pd
 from pandas.io.json import json_normalize
 import json
 import numpy as np
-import data_flattening
 
 siteHeader = st.container()
 
 # Gitcoin protocol datasets
-file_path_applications = 'data/ethereum_round_applications.json'
-file_path_votes = 'data/ethereum_round_votes_raw.json'
-round_name = 'ethereum'
+votes = pd.read_csv('data/ethereum_grant_votes.csv')
+apps = pd.read_csv('data/ethereum_grant_applications.csv')
+complete_dataset = pd.read_csv('data/ethereum_joined_dataset.csv')
 
-complete_dataset = data_flattening.processing(file_path_applications, file_path_votes, round_name)
 complete_dataset = complete_dataset[['id','token','amount',	'source_wallet', 'project_wallet', 'created_at_x',	'project_id','title', 'project_github',	'project_twitter', 'previous_funding', 'team_size',	'verified_twitter_or_github', 'links_to_github_or_org']]
 main_df = complete_dataset.tail()
 
