@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from pandas.io.json import json_normalize
+from pathlib import Path
 import json
 import numpy as np
 
@@ -20,7 +21,7 @@ with siteHeader:
   col2.metric("Unique contributors", "900")
   col3.metric("Total amount of contributions", "100000", "-10 from yesterday")
 
-  fantom_data = pd.read_csv('data/fantom_data_analysis_by_data_subset.csv') 
+  fantom_data = pd.read_csv(Path(__file__).parents[1] /  + 'data/fantom_data_analysis_by_data_subset.csv') 
   fantom_data['amount_donated'] = fantom_data['amount_donated'].astype('string')
 
   st.header('Distribution of donations')

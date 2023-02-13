@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from pandas.io.json import json_normalize
+from pathlib import Path
 import json
 import numpy as np
 
@@ -14,9 +15,9 @@ from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 siteHeader = st.container()
 
 # Gitcoin protocol datasets
-votes = pd.read_csv('data/oss_grant_votes.csv')
-apps = pd.read_csv('data/oss_grant_applications.csv')
-complete_dataset = pd.read_csv('data/oss_joined_dataset.csv')
+votes = pd.read_csv(Path(__file__).parents[1]/'data/oss_grant_votes.csv')
+apps = pd.read_csv(Path(__file__).parents[1]/'data/oss_grant_applications.csv')
+complete_dataset = pd.read_csv(Path(__file__).parents[1]/'data/oss_joined_dataset.csv')
 
 votes['created_at'] = pd.to_datetime(votes['created_at'])
 
