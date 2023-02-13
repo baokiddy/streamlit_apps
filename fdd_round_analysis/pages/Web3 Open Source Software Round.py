@@ -18,8 +18,12 @@ votes = pd.read_csv('data/oss_grant_votes.csv')
 apps = pd.read_csv('data/oss_grant_applications.csv')
 complete_dataset = pd.read_csv('data/oss_joined_dataset.csv')
 
+votes['created_at'] = pd.to_datetime(votes['created_at'])
+
 complete_dataset = complete_dataset[['id','token','amount',	'source_wallet', 'project_wallet', 'created_at_x',	'project_id','title', 'project_github',	'project_twitter', 'previous_funding', 'team_size',	'verified_twitter_or_github', 'links_to_github_or_org']]
 main_df = complete_dataset.tail()
+
+print(complete_dataset.sort_values('created_at_x').groupby(['created_at_x','title', 'token']).sum())
 
 with siteHeader:
     st.title('Web3 Open Source Software Analysis')
@@ -31,8 +35,14 @@ with siteHeader:
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Grant applications", f"{apps['project_id'].nunique()}")
     col2.metric("Unique contributors", f"{votes['source_wallet'].nunique()}")
-    col3.metric("Total contributions (ETH)", str(votes_eth['amount'].sum().round(2)))
-    col4.metric("Total contributions (DAI)", str(votes_dai['amount'].sum().round(2)))
+    col3.metric("No. of contributions", f"{votes['id'].count()}")
+    col4.metric("Lastest contribution", f"{votes['created_at'].max()}")
+
+    col1_1, col2_1, col3_1, col4_1 = st.columns(4)
+    col1_1.metric("Avg contribution (ETH)", str(votes_eth['amount'].mean().round(5)))
+    col2_1.metric("Avg contribution (DAI)", str(votes_dai['amount'].mean().round(5)))
+    col3_1.metric("Sum of contribution in ETH", str(votes_eth['amount'].sum().round(2)))
+    col4_1.metric("Sum of contributions in DAI", str(votes_dai['amount'].sum().round(2)))
 
     
     gb = GridOptionsBuilder.from_dataframe(main_df)
@@ -97,30 +107,48 @@ with siteHeader:
         # chart_data = pd.melt(chart_data, id_vars=['source'], var_name="date", value_name="quantity")
         #st.dataframe(chart_data)
         chart = alt.Chart(data=chart_data).mark_bar().encode(
-            x=alt.X("week(checked_at_x):O"),
+            x=alt.X("monthdate(created_at_x):O", title='Date'),
             y=alt.Y("sum(amount):Q"),
             color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection'])),
         )
 
-
-        # alt.Chart(df).mark_line().encode(
-        #     x=alt.X('Date', axis=alt.Axis(format='%e %b, %Y')),
-        #     y=alt.Y('Values', scale=alt.Scale(zero=False)),
-        #     color='Key') 
-
-        # chart = alt.Chart(data=chart_data).mark_bar().encode(
-        #     x=alt.X('checked_at_x:N', title=None),
-        #     y=alt.Y('amount:Q', scale=alt.Scale(domain=(0, 12000000))),
-        #     color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection']))
-        # ).properties(
-        #     width=600
-        # ).transform_calculate(
-        #     "source", alt.expr.if_(alt.datum.source == 1, "total", "selection")
-        # ).configure_facet(
-        #     spacing=8
-        # )
-
         st.header("Amount donated over time")
+        st.markdown("""
+        This chart is built with data returned from the grid. The rows that are selected are identified as shown in the legend.
+        """)
+
+        st.altair_chart(chart, use_container_width=True)
+
+    title_list = df.title.unique()
+    titles = [x for x in title_list if not pd.isnull(x)]
+
+    with st.spinner("Displaying results..."):
+        
+        #displays the chart
+        df['created_at_x'] = pd.to_datetime(df['created_at_x'])
+        chart_data = df.loc[:,['title', 'created_at_x','amount']]
+
+        if not selected_df.empty :
+            selected_data = selected_df.loc[:,['title','created_at_x','amount']]
+            chart_data = selected_data
+
+        # chart_data = pd.melt(chart_data, id_vars=['source'], var_name="date", value_name="quantity")
+        #st.dataframe(chart_data)
+
+        cd = chart_data.groupby(['title'], as_index=False)['amount'].sum()
+
+        top_10_projects = cd['title'].head(10)
+        chart_data = chart_data[chart_data['title'].isin(top_10_projects)]
+
+        titles = chart_data.title.unique()
+
+        chart = alt.Chart(data=chart_data).mark_bar().encode(
+            x=alt.X("monthdate(created_at_x):O", title='Date'),
+            y=alt.Y("sum(amount):Q"),
+            color=alt.Color('title:N', scale=alt.Scale(domain=titles)),
+        )
+
+        st.header("Amount donated over time by project")
         st.markdown("""
         This chart is built with data returned from the grid. The rows that are selected are identified as shown in the legend.
         """)

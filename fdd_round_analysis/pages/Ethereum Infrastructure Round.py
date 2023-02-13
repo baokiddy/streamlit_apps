@@ -4,6 +4,13 @@ from pandas.io.json import json_normalize
 import json
 import numpy as np
 
+from distutils import errors
+from distutils.log import error
+import altair as alt
+from itertools import cycle
+
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, JsCode
+
 siteHeader = st.container()
 
 # Gitcoin protocol datasets
@@ -11,7 +18,7 @@ votes = pd.read_csv('data/ethereum_grant_votes.csv')
 apps = pd.read_csv('data/ethereum_grant_applications.csv')
 complete_dataset = pd.read_csv('data/ethereum_joined_dataset.csv')
 
-complete_dataset = complete_dataset[['id','token','amount',	'source_wallet', 'project_wallet', 'created_at_x',	'project_id','title', 'project_github',	'project_twitter', 'previous_funding', 'team_size',	'verified_twitter_or_github', 'links_to_github_or_org']]
+complete_dataset = complete_dataset[['id','token','amount',	'source_wallet', 'project_wallet', 'created_at_x',	'project_id','title', 'project_github',	'project_twitter', 'previous_funding', 'team_size',	'verified_twitter_or_github']]
 main_df = complete_dataset.tail()
 
 with siteHeader:
@@ -90,28 +97,10 @@ with siteHeader:
         # chart_data = pd.melt(chart_data, id_vars=['source'], var_name="date", value_name="quantity")
         #st.dataframe(chart_data)
         chart = alt.Chart(data=chart_data).mark_bar().encode(
-            x=alt.X("week(checked_at_x):O"),
+            x=alt.X("monthdate(created_at_x):O", title='Date'),
             y=alt.Y("sum(amount):Q"),
             color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection'])),
         )
-
-
-        # alt.Chart(df).mark_line().encode(
-        #     x=alt.X('Date', axis=alt.Axis(format='%e %b, %Y')),
-        #     y=alt.Y('Values', scale=alt.Scale(zero=False)),
-        #     color='Key') 
-
-        # chart = alt.Chart(data=chart_data).mark_bar().encode(
-        #     x=alt.X('checked_at_x:N', title=None),
-        #     y=alt.Y('amount:Q', scale=alt.Scale(domain=(0, 12000000))),
-        #     color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection']))
-        # ).properties(
-        #     width=600
-        # ).transform_calculate(
-        #     "source", alt.expr.if_(alt.datum.source == 1, "total", "selection")
-        # ).configure_facet(
-        #     spacing=8
-        # )
 
         st.header("Amount donated over time")
         st.markdown("""
@@ -119,3 +108,7 @@ with siteHeader:
         """)
 
         st.altair_chart(chart, use_container_width=True)
+
+
+
+
