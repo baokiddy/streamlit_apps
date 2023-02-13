@@ -15,20 +15,7 @@ with siteHeader:
   col1.metric("Grant applications", "10")
   col2.metric("Unique contributors", "900")
   col3.metric("Total amount of contributions", "100000", "-10 from yesterday")
+  
+  st.text('overall agreggated insights to be included here')
 
-  fantom_data = pd.read_csv(Path(__file__).parents[1] /  + 'data/fantom_data_analysis_by_data_subset.csv') 
-  fantom_data['amount_donated'] = fantom_data['amount_donated'].astype('string')
-
-  st.header('Distribution of donations')
-  st.text('This data is ...')
-
-  ftm_all_projects =  fantom_data[fantom_data['data_subset'] == 'ftm_all_projects']
-
-  ftm_all_distribution = ftm_all_projects[['amount_donated', 'unique_donations']]
-  st.bar_chart(ftm_all_distribution, x='amount_donated', y='unique_donations') 
-
-  st.header('Sum of donations by categories')
-  st.text('This data is ...')
-
-  ftm_all_sum = ftm_all_projects[['amount_donated', 'total_amount_donated']]
-  st.bar_chart(ftm_all_sum, x='amount_donated', y='total_amount_donated') 
+  
