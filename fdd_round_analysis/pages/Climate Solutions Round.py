@@ -110,6 +110,47 @@ with siteHeader:
 
         st.altair_chart(chart, use_container_width=True)
 
+    title_list = df.title.unique()
+    titles = [x for x in title_list if not pd.isnull(x)]
+
+    with st.spinner("Displaying results..."):
+        
+        #displays the chart
+        df['created_at_x'] = pd.to_datetime(df['created_at_x'])
+        chart_data = df.loc[:,['title', 'created_at_x','amount']]
+
+        if not selected_df.empty :
+            selected_data = selected_df.loc[:,['title','created_at_x','amount']]
+            chart_data = selected_data
+
+        # chart_data = pd.melt(chart_data, id_vars=['source'], var_name="date", value_name="quantity")
+        #st.dataframe(chart_data)
+
+        cd = chart_data.groupby(['title'], as_index=False)['amount'].sum()
+
+        top_10_projects = cd['title'].head(10)
+        chart_data = chart_data[chart_data['title'].isin(top_10_projects)]
+
+        titles = chart_data.title.unique()
+
+        chart = alt.Chart(data=chart_data).mark_bar().encode(
+            x=alt.X("monthdate(created_at_x):O", title='Date'),
+            y=alt.Y("sum(amount):Q"),
+            color=alt.Color('title:N', scale=alt.Scale(domain=titles)),
+        )
+
+        st.header("Amount donated over time by project")
+        st.markdown("""
+        This chart is built with data returned from the grid. The rows that are selected are identified as shown in the legend.
+        """)
+
+        st.altair_chart(chart, use_container_width=True)
+
+
+
+
+
+
 
 
 
