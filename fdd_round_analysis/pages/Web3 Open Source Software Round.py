@@ -22,6 +22,22 @@ complete_dataset = pd.read_csv(Path(__file__).parents[1]/'data/oss_joined_datase
 votes['created_at'] = pd.to_datetime(votes['created_at'])
 
 complete_dataset = complete_dataset[['id','token','amount',	'source_wallet', 'project_wallet', 'created_at_x',	'project_id','title', 'project_github',	'project_twitter', 'previous_funding', 'team_size',	'verified_twitter_or_github', 'links_to_github_or_org']]
+
+
+# eth to usd - 1507.09
+# dai to usd - 0.998979
+# complete_dataset['amount_usd'] = [df['amount'] if x =='ETH' else df['amount']*0.998979 for x in df['token']]
+
+amount_usd = []
+for i in range(len(complete_dataset['token'])):
+    if complete_dataset['token'][i] == 'ETH':
+        amount_usd.append(complete_dataset['amount'][i]*1507.09)
+    elif complete_dataset['token'][i] == 'DAI':
+        amount_usd.append(complete_dataset['amount'][i]*0.998979)
+
+complete_dataset['amount_usd'] = amount_usd
+
+# complete_dataset['amount_usd'] = np.where(complete_dataset['token']=='Music', complete_dataset['amount']*1507.09,complete_dataset['amount']*0.998979)
 main_df = complete_dataset.tail()
 
 print(complete_dataset.sort_values('created_at_x').groupby(['created_at_x','title', 'token']).sum())
@@ -48,7 +64,8 @@ with siteHeader:
     
     gb = GridOptionsBuilder.from_dataframe(main_df)
    
-    gb.configure_column("amount", type=["numericColumn","numberColumnFilter","customNumericFormat"], precision=2, aggFunc='sum')
+    gb.configure_column("amount", type=["numericColumn","numberColumnFilter","customNumericFormat"], precision=5, aggFunc='sum')
+    gb.configure_column("amount_usd", type=["numericColumn","numberColumnFilter","customNumericFormat"], precision=2, aggFunc='sum')
     gb.configure_column("created_at_x", type=["dateColumnFilter","customDateTimeFormat"], custom_format_string='yyyy-MM-dd HH:mm zzz', pivot=True)
 
     #configures last row to use custom styles based on cell's value, injecting JsCode on components front end
@@ -92,33 +109,45 @@ with siteHeader:
         )
 
     df = grid_response['data']
+    # print(df)
     selected = grid_response['selected_rows']
-    selected_df = pd.DataFrame(selected).apply(pd.to_numeric, errors='coerce')
-
+    # print(selected)
+    # selected_df = pd.DataFrame(selected)
+    # selected_df.index = selected_df.index.astype(int)
+    selected_df = pd.DataFrame(selected).apply(pd.to_numeric)
 
     with st.spinner("Displaying results..."):
         #displays the chart
         df['created_at_x'] = pd.to_datetime(df['created_at_x'])
-        chart_data = df.loc[:,['created_at_x','amount']].assign(source='total')
+        chart_data = df.loc[:,['created_at_x','amount_usd']].assign(source='total')
 
         if not selected_df.empty :
-            selected_data = selected_df.loc[:,['created_at_x','amount']].assign(source='selection')
+            selected_df['amount'].apply(pd.to_numeric, errors='coerce')
+            selected_df['amount_usd'].apply(pd.to_numeric, errors='coerce')
+            selected_df['created_at_x'].apply(pd.to_datetime, errors='coerce')
+            print(selected_df)
+
+            # selected_data['created_at_x'] = pd.to_datetime(selected['created_at_x'])
+            selected_data = selected_df.loc[:,['created_at_x','amount_usd']].assign(source='selection')
+            print(selected_data)
             chart_data = pd.concat([chart_data, selected_data])
+            print(chart_data)
 
         # chart_data = pd.melt(chart_data, id_vars=['source'], var_name="date", value_name="quantity")
         #st.dataframe(chart_data)
         chart = alt.Chart(data=chart_data).mark_bar().encode(
             x=alt.X("monthdate(created_at_x):O", title='Date'),
-            y=alt.Y("sum(amount):Q"),
-            color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection'])),
+            y=alt.Y("sum(amount_usd):Q"),
+            color=alt.Color('source:N', scale=alt.Scale(domain=['total', 'selection'])),
         )
 
-        st.header("Amount donated over time")
+        st.header("Amount donated over time ")
         st.markdown("""
         This chart is built with data returned from the grid. The rows that are selected are identified as shown in the legend.
         """)
 
         st.altair_chart(chart, use_container_width=True)
+
 
     title_list = df.title.unique()
     titles = [x for x in title_list if not pd.isnull(x)]
@@ -127,16 +156,12 @@ with siteHeader:
         
         #displays the chart
         df['created_at_x'] = pd.to_datetime(df['created_at_x'])
-        chart_data = df.loc[:,['title', 'created_at_x','amount']]
-
-        if not selected_df.empty :
-            selected_data = selected_df.loc[:,['title','created_at_x','amount']]
-            chart_data = selected_data
+        chart_data = df.loc[:,['title', 'created_at_x','amount_usd']]
 
         # chart_data = pd.melt(chart_data, id_vars=['source'], var_name="date", value_name="quantity")
         #st.dataframe(chart_data)
 
-        cd = chart_data.groupby(['title'], as_index=False)['amount'].sum()
+        cd = chart_data.groupby(['title'], as_index=False)['amount_usd'].sum()
 
         top_10_projects = cd['title'].head(10)
         chart_data = chart_data[chart_data['title'].isin(top_10_projects)]
@@ -145,7 +170,7 @@ with siteHeader:
 
         chart = alt.Chart(data=chart_data).mark_bar().encode(
             x=alt.X("monthdate(created_at_x):O", title='Date'),
-            y=alt.Y("sum(amount):Q"),
+            y=alt.Y("sum(amount_usd):Q"),
             color=alt.Color('title:N', scale=alt.Scale(domain=titles)),
         )
 
